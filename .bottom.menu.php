@@ -44,5 +44,12 @@ $aMenuLinks = Array(
 		Array(),
 		""
 	),
+		Array(
+		"Клиенты", 
+		"clients/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
 );
 ?>
