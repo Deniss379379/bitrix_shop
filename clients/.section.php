@@ -1,6 +1,6 @@
 <?
-$sSectionName = "Контакты";
-$arDirProperties = Array(
+$sSectionName = "Клиенты";
+$arDirProperties = array(
 
 );
 ?>
