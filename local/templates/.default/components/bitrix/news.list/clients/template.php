@@ -21,17 +21,17 @@ $closeTagDiv = "</div>";
 //OUTPUT
 echo $openTagDiv;
 foreach ($arResult['ITEMS'] as $arItem) {
-		 $arItemProperties = $arItem["PROPERTIES_MOD"];
+	$arItemProperties = $arItem["PROPERTIES_MOD"];
 		
-		echo $openTagP;
-			echo $name . $arItemProperties["COMPLETE_NAME"] . $newLine; 
-			echo $phone . $arItemProperties["PHONE"] . $newLine; 
-			echo $address . $city . $arItemProperties["CITY"] . ", "; 
-			echo $street . $arItemProperties["STREET"] . ", ";
-			echo $building . $arItemProperties["BUILDING"]. ", ";
-			echo $flat . $arItemProperties["FLAT"] . $newLine;
-		echo $closeTagP;
-	}; 
+	echo $openTagP;
+	echo $name . $arItemProperties["COMPLETE_NAME"] . $newLine; 
+	echo $phone . $arItemProperties["PHONE"] . $newLine; 
+	echo $address . $city . $arItemProperties["CITY"] . ", "; 
+	echo $street . $arItemProperties["STREET"] . ", ";
+	echo $building . $arItemProperties["BUILDING"]. ", ";
+	echo $flat . $arItemProperties["FLAT"] . $newLine;
+	echo $closeTagP;
+}; 
 
 echo $closeTagDiv;
 
