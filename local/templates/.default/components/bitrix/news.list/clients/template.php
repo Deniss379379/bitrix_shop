@@ -1,33 +1,37 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-/** @var array $arParams */
-/** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
-/** @var string $templateName */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 use Bitrix\Main\Localization\Loc;
 
-?>
-<?php
-$test = Loc::getMessage("PHONE");
+//localization
+$name = Loc::getMessage("COMPLETE_NAME");
+$phone = Loc::getMessage("PHONE");
+$address = Loc::getMessage("ADDRESS");
+$city = Loc::getMessage("CITY");
+$street = Loc::getMessage("STREET");
+$building = Loc::getMessage("BUILDING");
+$flat = Loc::getMessage("FLAT");
 
-?>
-<div class = "news-list">
-	<?php
-	 foreach ($arResult['ITEMS'] as $arItem) {
-?>
-		<p class ="news-item">
-			имя: <?= $arItem["PROPERTIES_MOD"]['COMPLETE_NAME']?> <br>
-			<?php echo $test ?>: <?= $arItem ["PROPERTIES_MOD"]["PHONE"]?>  <br>
-			 Адрес: Город <?=  $arItem ["PROPERTIES_MOD"]["CITY"] ?> Улица <?=  $arItem ["PROPERTIES_MOD"]["STREET"] ?>
-			 дом<?=  $arItem ["PROPERTIES_MOD"]["BUILDING"] ?> квартира <?= $arItem ["PROPERTIES_MOD"]["FLAT"] ?>
-		</p>
-		<?php } ?>
+//HTML and CSS
+$newLine = "</br>";
+$openTagP = "<p class = 'news-item'>";
+$closeTagP = "</p>";
+$openTagDiv = "<div class = 'card'>";
+$closeTagDiv = "</div>";
 
-</div>
+//OUTPUT
+echo $openTagDiv;
+foreach ($arResult['ITEMS'] as $arItem) {
+		 $arItemProperties = $arItem["PROPERTIES_MOD"];
+		
+		echo $openTagP;
+			echo $name . $arItemProperties["COMPLETE_NAME"] . $newLine; 
+			echo $phone . $arItemProperties["PHONE"] . $newLine; 
+			echo $address . $city . $arItemProperties["CITY"] . ", "; 
+			echo $street . $arItemProperties["STREET"] . ", ";
+			echo $building . $arItemProperties["BUILDING"]. ", ";
+			echo $flat . $arItemProperties["FLAT"] . $newLine;
+		echo $closeTagP;
+	}; 
+
+echo $closeTagDiv;
+
