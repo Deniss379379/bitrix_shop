@@ -29,18 +29,18 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Контакты",
-		"about/contacts/",
-		Array(),
-		Array(),
-		""
-	),
-	Array(
 		"Мой кабинет",
 		"personal/",
 		Array(),
 		Array(),
 		"\$USER->IsAuthorized()"
 	),
+		Array(
+		"Клиенты",
+		"clients/", 
+		Array(), 
+		Array(), 
+		"" 
+	),	
 );
 ?>
