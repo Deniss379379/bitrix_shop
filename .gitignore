@@ -5,5 +5,7 @@ Thumbs.db
 upload
 images
 /local/vendor/
-/local/modules/sprint.migration
+/local/modules/
 /local/composer.lock/
+code
+/.vscode/
